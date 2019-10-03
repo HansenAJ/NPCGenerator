@@ -1,6 +1,6 @@
 
 {
-    "name": "issueTracker",
+    "name": "proj_4",
     "scripts": {
       "build": "cd client && npm install && npm run build && cd ..",
       "postinstall": "npm run build && echo 'Client built!'"
