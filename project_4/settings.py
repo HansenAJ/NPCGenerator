@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'issuetrackerApp',
+    'proj_4',
     'rest_framework'
 ]
 
