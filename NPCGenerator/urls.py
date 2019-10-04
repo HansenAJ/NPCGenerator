@@ -11,6 +11,8 @@ router.register(r'lname', views.LNameViewSet)
 
 router.register(r'race', views.RaceViewSet)
 
+router.register(r'allign', views.AllignViewSet)
+
 
 
 urlpatterns = [

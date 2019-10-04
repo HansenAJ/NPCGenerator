@@ -8,3 +8,6 @@ class LName(models.Model):
 
 class Race(models.Model):
     race = models.CharField(max_length=20)
+
+class Allign(models.Model):
+    allign = models.CharField(max_length=20)
