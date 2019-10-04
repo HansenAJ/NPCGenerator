@@ -11,3 +11,6 @@ class Race(models.Model):
 
 class Allign(models.Model):
     allign = models.CharField(max_length=20)
+
+class Gender(models.Model):
+    gender = models.CharField(max_length=20)

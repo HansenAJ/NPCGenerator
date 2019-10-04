@@ -13,6 +13,8 @@ router.register(r'race', views.RaceViewSet)
 
 router.register(r'allign', views.AllignViewSet)
 
+router.register(r'gender', views.GenderViewSet)
+
 
 
 urlpatterns = [
