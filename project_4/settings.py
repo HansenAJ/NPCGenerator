@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'proj_4',
-    'rest_framework'
+    'rest_framework',
+    'NPCGenerator'
 ]
 
 MIDDLEWARE = [
@@ -132,7 +132,7 @@ REST_FRAMEWORK = {
 
 REACT_APP_DIR = "client"
 
-STATICFILES_DIRS = [
+STATICFILES_DIR = [
   os.path.join(REACT_APP_DIR, 'build', 'static')
 ]
 
