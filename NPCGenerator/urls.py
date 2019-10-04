@@ -21,6 +21,8 @@ router.register(r'weight', views.WeightViewSet)
 
 router.register(r'height', views.HeightViewSet)
 
+router.register(r'weapon', views.WeaponViewSet)
+
 
 
 urlpatterns = [

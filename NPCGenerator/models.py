@@ -23,3 +23,6 @@ class Weight(models.Model):
 
 class Height(models.Model):
     height = models.CharField(max_length=20)
+
+class Weapon(models.Model):
+    weapon = models.CharField(max_length=20)
