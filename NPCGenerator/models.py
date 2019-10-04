@@ -20,3 +20,6 @@ class ClassType(models.Model):
 
 class Weight(models.Model):
     weight = models.CharField(max_length=20)
+
+class Height(models.Model):
+    height = models.CharField(max_length=20)

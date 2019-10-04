@@ -19,6 +19,8 @@ router.register(r'class', views.ClassTypeViewSet)
 
 router.register(r'weight', views.WeightViewSet)
 
+router.register(r'height', views.HeightViewSet)
+
 
 
 urlpatterns = [
