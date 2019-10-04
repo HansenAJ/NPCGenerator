@@ -17,3 +17,6 @@ class Gender(models.Model):
 
 class ClassType(models.Model):
     classtype = models.CharField(max_length=20)
+
+class Weight(models.Model):
+    weight = models.CharField(max_length=20)

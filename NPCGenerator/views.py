@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from .serializers import FNameSerializer, LNameSerializer, RaceSerializer, AllignSerializer, GenderSerializer, ClassTypeSerializer
-from .models import FName, LName, Race, Allign, Gender, ClassType
+from .serializers import FNameSerializer, LNameSerializer, RaceSerializer, AllignSerializer, GenderSerializer, ClassTypeSerializer, WeightSerializer
+from .models import FName, LName, Race, Allign, Gender, ClassType, Weight
 
 class FNameViewSet(viewsets.ModelViewSet):
     queryset = FName.objects.all()
@@ -33,3 +33,8 @@ class ClassTypeViewSet(viewsets.ModelViewSet):
     queryset = ClassType.objects.all()
 
     serializer_class = ClassTypeSerializer
+
+class WeightViewSet(viewsets.ModelViewSet):
+    queryset = Weight.objects.all()
+
+    serializer_class = WeightSerializer
