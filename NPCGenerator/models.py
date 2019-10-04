@@ -14,3 +14,6 @@ class Allign(models.Model):
 
 class Gender(models.Model):
     gender = models.CharField(max_length=20)
+
+class ClassType(models.Model):
+    classtype = models.CharField(max_length=20)

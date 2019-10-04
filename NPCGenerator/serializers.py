@@ -1,5 +1,5 @@
 from rest_framework import serializers    
-from .models import FName, LName, Race, Allign, Gender
+from .models import FName, LName, Race, Allign, Gender, ClassType
      
 class FNameSerializer(serializers.ModelSerializer):  
     class Meta:     
@@ -34,4 +34,11 @@ class GenderSerializer(serializers.ModelSerializer):
         model = Gender
         fields = [
             'gender'
+        ]
+
+class ClassTypeSerializer(serializers.ModelSerializer):  
+    class Meta:     
+        model = ClassType
+        fields = [
+            'classtype'
         ]

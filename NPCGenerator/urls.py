@@ -15,6 +15,8 @@ router.register(r'allign', views.AllignViewSet)
 
 router.register(r'gender', views.GenderViewSet)
 
+router.register(r'class', views.ClassTypeViewSet)
+
 
 
 urlpatterns = [
