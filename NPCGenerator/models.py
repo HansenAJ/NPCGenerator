@@ -5,3 +5,6 @@ class FName(models.Model):
 
 class LName(models.Model):
     name = models.CharField(max_length=20)
+
+class Race(models.Model):
+    race = models.CharField(max_length=20)

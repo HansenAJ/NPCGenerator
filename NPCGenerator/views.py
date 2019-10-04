@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 from rest_framework import viewsets
-from .serializers import FNameSerializer, LNameSerializer
-from .models import FName, LName
+from .serializers import FNameSerializer, LNameSerializer, RaceSerializer
+from .models import FName, LName, Race
 
 class FNameViewSet(viewsets.ModelViewSet):
     queryset = FName.objects.all()
@@ -14,3 +14,7 @@ class LNameViewSet(viewsets.ModelViewSet):
 
     serializer_class = LNameSerializer
 
+class RaceViewSet(viewsets.ModelViewSet):
+    queryset = Race.objects.all()
+
+    serializer_class = RaceSerializer
