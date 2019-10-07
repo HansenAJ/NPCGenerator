@@ -6,7 +6,7 @@ import { object } from 'prop-types';
 
 const randomSelect= (trait) => {
   console.log("Trait = " + trait)
-  let randSelect = Object.values(trait[1])[Math.floor(Math.random()*trait.length)];
+  let randSelect = Object.values(trait[1])[Math.floor(Math.random()*(trait.length + 1))];
   console.log("RandSelect = " + randSelect)
   return randSelect
 }
@@ -62,15 +62,10 @@ class App extends React.Component {
     }
   }
 
-  //map through 'start', grabbing random items, and assigning to same key in 'randomized'
-//Map needs array. State is object.
-//Lookup object.entries
   componentDidMount = () => {
 
     let objState = Object.entries(this.state.start)
-
     let tempObj;
-
     let randomState = this.state.randomized
 
     for (let property1 in objState) {
@@ -80,9 +75,6 @@ class App extends React.Component {
     }
 
     this.setState({ randomState })
-
-    console.log("Random Test = " + randomState.lastName)
-    console.log("Start State : " + this.state.start.firstName)
 
   }
 
