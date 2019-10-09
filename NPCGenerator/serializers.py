@@ -5,14 +5,14 @@ class FNameSerializer(serializers.ModelSerializer):
     class Meta:     
         model = FName
         fields = [
-            'name'
+            'fname'
         ]
 
 class LNameSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = LName
         fields = [
-            'name'
+            'lname'
         ]
 
 class RaceSerializer(serializers.ModelSerializer):  

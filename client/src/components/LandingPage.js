@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import logo from '../logo.svg';
 // import './App.css';
@@ -29,12 +30,12 @@ export default class LandingPage extends Component {
 
   state = {
     start: {
-      firstName: ["Blast", "Squat", "Brick"],
-      lastName: ["HardCheese", "AbbThrust", "PunchGroin"],
+      fname: ["Blast", "Squat", "Brick"],
+      lname: ["HardCheese", "AbbThrust", "PunchGroin"],
       race: ["Human", "Elf", "Orc"],
       gender: ["Male", "Female", "Andro"],
       alignment: ["Op 1", "Op 2", "Op 3"],
-      class: ["Op 1", "Op 2", "Op 3"],
+      classtype: ["Op 1", "Op 2", "Op 3"],
       height: ["Op 1", "Op 2", "Op 3"],
       weight: ["Op 1", "Op 2", "Op 3"],
       weapon: ["Op 1", "Op 2", "Op 3"],
@@ -44,12 +45,12 @@ export default class LandingPage extends Component {
       socTrait2: ["Op 1", "Op 2", "Op 3"]
     },
     randomized: {
-      firstName: '',
-      lastName: '',
+      fname: '',
+      lname: '',
       race: '',
       gender: '',
       alignment: '',
-      class: '',
+      classtype: '',
       height: '',
       weight: '',
       weapon: '',
@@ -75,6 +76,7 @@ export default class LandingPage extends Component {
     this.setState({ randomState })
 
   }
+
 
   render = () =>(
     <div className="App">
@@ -104,6 +106,13 @@ export default class LandingPage extends Component {
         {traitDisplay(field[10], this.state.randomized.pysTrait)}
         {traitDisplay(field[11], this.state.randomized.socTrait1)}
         {traitDisplay(field[12], this.state.randomized.socTrait2)}
+        <Link to={{
+            pathname: "/addtrait/"
+            }}
+            class='linkbutton'>
+            Add New Trait
+        </Link>
+        {/* pass props through link with react router */}
       </header>
     </div>
   );

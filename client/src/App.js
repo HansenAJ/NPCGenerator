@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import LandingPage from './components/LandingPage';
+import AddTrait from './components/AddTrait';
 
 class App extends Component {
 
@@ -10,6 +11,7 @@ class App extends Component {
       <Router>
         <Switch>
         <Route exact path ="/" component={LandingPage}/>
+        <Route exact path ="/addtrait" component={AddTrait}/>
         </Switch>
       </Router>
     </div>
