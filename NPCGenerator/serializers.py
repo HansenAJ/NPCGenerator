@@ -1,13 +1,26 @@
 from rest_framework import serializers    
-from .models import GetAll, FName, LName, Race, Allign, Gender, ClassType, Weight, Height, Weapon
+from .models import Level, PhysTrait, SocTrait, FName, LName, Race, Allignment, Gender, ClassType, Weight, Height, Weapon
 
 
-
-class GetAllSerializer(serializers.ModelSerializer):  
+class LevelSerializer(serializers.ModelSerializer):  
     class Meta:     
-        model = FName
+        model = Level
         fields = [
-            'fname'
+            'level'
+        ]
+
+class SocTraitSerializer(serializers.ModelSerializer):  
+    class Meta:     
+        model = SocTrait
+        fields = [
+            'soctrait'
+        ]
+
+class PhysTraitSerializer(serializers.ModelSerializer):  
+    class Meta:     
+        model = PhysTrait
+        fields = [
+            'phystrait'
         ]
 
 class FNameSerializer(serializers.ModelSerializer):  
@@ -31,11 +44,11 @@ class RaceSerializer(serializers.ModelSerializer):
             'race'
         ]
 
-class AllignSerializer(serializers.ModelSerializer):  
+class AllignmentSerializer(serializers.ModelSerializer):  
     class Meta:     
-        model = Allign
+        model = Allignment
         fields = [
-            'allign'
+            'allignment'
         ]
 
 class GenderSerializer(serializers.ModelSerializer):  

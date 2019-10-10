@@ -42,6 +42,14 @@ export default class AddTrait extends Component {
                         <option value="fname">First Name</option>
                         <option value="lname">Last Name</option>
                         <option value="race">Race</option>
+                        <option value="allignment">Allignment</option>
+                        <option value="gender">Gender</option>
+                        <option value="classtype">Class</option>
+                        <option value="weight">Weight</option>
+                        <option value="height">Height</option>
+                        <option value="phystrait">Physical Trait</option>
+                        <option value="soctrait">Social Trait</option>
+                        <option value="level">Level</option>
                     </select>
                     <label>Input Trait</label>
                     <input type="text" name="fname" placeholder="New Trait Here" onChange={this.inputHandler} id='traitInput'/>
@@ -50,7 +58,7 @@ export default class AddTrait extends Component {
                 <Link to={{
                     pathname: "/"
                     }}
-                    class='linkbutton'>
+                    className='linkbutton'>
                     Home
                 </Link>
             </div>            

@@ -9,8 +9,8 @@ class LName(models.Model):
 class Race(models.Model):
     race = models.CharField(max_length=20)
 
-class Allign(models.Model):
-    allign = models.CharField(max_length=20)
+class Allignment(models.Model):
+    allignment = models.CharField(max_length=20)
 
 class Gender(models.Model):
     gender = models.CharField(max_length=20)
@@ -27,6 +27,13 @@ class Height(models.Model):
 class Weapon(models.Model):
     weapon = models.CharField(max_length=20)
 
-class GetAll(models.Model):
-    fname = models.CharField(max_length=20)
-    lname = models.CharField(max_length=20)
+class SocTrait(models.Model):
+    soctrait = models.CharField(max_length=20)
+
+class PhysTrait(models.Model):
+    phystrait = models.CharField(max_length=20)
+
+class Level(models.Model):
+    level = models.CharField(max_length=20)
+
+
