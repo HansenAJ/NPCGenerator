@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class AddTrait extends Component {
 
@@ -46,6 +47,12 @@ export default class AddTrait extends Component {
                     <input type="text" name="fname" placeholder="New Trait Here" onChange={this.inputHandler} id='traitInput'/>
                     <input type="submit" value="Add New Trait" className='button'/>
                 </form>
+                <Link to={{
+                    pathname: "/"
+                    }}
+                    class='linkbutton'>
+                    Home
+                </Link>
             </div>            
         )
     }

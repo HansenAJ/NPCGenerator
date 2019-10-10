@@ -23,6 +23,8 @@ router.register(r'height', views.HeightViewSet)
 
 router.register(r'weapon', views.WeaponViewSet)
 
+router.register(r'getall', views.GetAllViewSet)
+
 
 
 urlpatterns = [

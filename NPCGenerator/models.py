@@ -26,3 +26,7 @@ class Height(models.Model):
 
 class Weapon(models.Model):
     weapon = models.CharField(max_length=20)
+
+class GetAll(models.Model):
+    fname = models.CharField(max_length=20)
+    lname = models.CharField(max_length=20)

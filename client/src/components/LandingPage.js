@@ -4,12 +4,7 @@ import { Link } from 'react-router-dom'
 import logo from '../logo.svg';
 // import './App.css';
 
-const randomSelect= (trait) => {
-  console.log("Trait = " + trait)
-  let randSelect = Object.values(trait[1])[Math.floor(Math.random()*(trait.length + 1))];
-  console.log("RandSelect = " + randSelect)
-  return randSelect
-}
+const randomSelect= (trait) => trait[Math.floor(Math.random()*(trait.length))]
 
 const traitDisplay = (field, trait) => {
   return (
@@ -25,6 +20,14 @@ const traitDisplay = (field, trait) => {
 
 const field = ['First Name', 'Last Name', 'Race', 'Gender', 'Alignment', "Class", 'Height', 'Weight', 'Weapon', 'Level', 'Pyshical Trai', 'Social Trait 1', 'Social Trait 2']
 
+const getRouteNameFromKey = (key) =>
+      key === "socTrait1" ? "soctrait"
+    : key === "socTrait2" ? "soctrait"
+    : key
+
+const getRandomFieldFromServer = (key) =>
+    fetch(`/api/${getRouteNameFromKey(key)}`)
+        .then(res => res.json())
 
 export default class LandingPage extends Component {
 
@@ -63,18 +66,46 @@ export default class LandingPage extends Component {
 
   componentDidMount = () => {
 
-    let objState = Object.entries(this.state.start)
-    let tempObj;
-    let randomState = this.state.randomized
+    this.setAllRandomFields();
+    // let randomState = {...this.state.randomized}
 
-    for (let property1 in objState) {
-      tempObj = randomSelect(objState[property1])
-      console.log("ObjectStatePropery = " + objState[property1][0])
-      randomState[objState[property1][0]] = tempObj
-    }
+    // for (let property1 in this.state.start) {
+    //   //console.log("ObjectStatePropery = " + this.state.start[property1][0])
+    // //   randomState[objState[property1][0]] = tempObj
+    //     randomState[property1] = randomSelect(this.state.start[property1])
+    //     console.log("rand: ", randomState)
+    // }
 
-    this.setState({ randomState })
+    // this.setState({ randomized: randomState })
 
+  }
+
+  setAllRandomFields = () =>
+      Promise.all(
+        Object.keys(this.state.randomized)
+            .map(k =>
+                getRandomFieldFromServer(k) 
+                    .then(this.cacheFieldValues(k))
+                    .then(() => this.setRandomizedField(k))
+            )
+      )
+    
+  cacheFieldValues = (key) => (values) => {
+      let start = {...this.state.start}
+
+      start[key] = values;
+
+      this.setState({start})
+  }
+
+  getRandomField = (key) => randomSelect(this.state.start[key])
+
+  setRandomizedField = (key) => {
+      let randomized = {...this.state.randomized};
+
+      randomized[key] = this.getRandomField(key)
+
+      this.setState({randomized})
   }
 
 
@@ -93,12 +124,12 @@ export default class LandingPage extends Component {
         >
           Learn React
         </a>
-        {traitDisplay(field[0], this.state.randomized.firstName)}
-        {traitDisplay(field[1], this.state.randomized.lastName)}
+        {traitDisplay(field[0], this.state.randomized.fname)}
+        {traitDisplay(field[1], this.state.randomized.lname)}
         {traitDisplay(field[2], this.state.randomized.race)}
         {traitDisplay(field[3], this.state.randomized.gender)}
         {traitDisplay(field[4], this.state.randomized.alignment)}
-        {traitDisplay(field[5], this.state.randomized.class)}
+        {traitDisplay(field[5], this.state.randomized.classtype)}
         {traitDisplay(field[6], this.state.randomized.height)}
         {traitDisplay(field[7], this.state.randomized.weight)}
         {traitDisplay(field[8], this.state.randomized.weapon)}

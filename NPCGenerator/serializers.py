@@ -1,6 +1,15 @@
 from rest_framework import serializers    
-from .models import FName, LName, Race, Allign, Gender, ClassType, Weight, Height, Weapon
-     
+from .models import GetAll, FName, LName, Race, Allign, Gender, ClassType, Weight, Height, Weapon
+
+
+
+class GetAllSerializer(serializers.ModelSerializer):  
+    class Meta:     
+        model = FName
+        fields = [
+            'fname'
+        ]
+
 class FNameSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = FName
