@@ -8,10 +8,6 @@ export default class TraitDisplay extends Component {
         }
     
         deleteFromServer = (trait, traitName, traitID) => {
-            console.log("Delete Called")
-            console.log("Trait: ", trait)
-            console.log("Name: ", traitName)
-            console.log("ID: ", traitID)
               fetch(`/api/${traitName}/${traitID}/`,
                 { method  : "DELETE"
                 , headers : { "Content-Type": "application/json" }

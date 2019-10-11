@@ -118,6 +118,7 @@ export default class LandingPage extends Component {
   render = () =>(
     <div className="App">
       <header className="App-header">
+        <button onClick={() => this.setAllRandomFields()}>Make Me a New NPC</button>
         {traitDisplay(field[0], this.state.randomized.fname)}
         {traitDisplay(field[1], this.state.randomized.lname)}
         {traitDisplay(field[2], this.state.randomized.race)}

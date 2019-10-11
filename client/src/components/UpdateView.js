@@ -13,7 +13,7 @@ const getAllFromServer = (key) =>
 export default class UpdateView extends Component {
     state ={
         displayHolder: 'fname',
-        fname: [{fname: 'demo', id: 1}],
+        fname: [],
         lname: [],
         race: [],
         gender: [],
@@ -55,10 +55,19 @@ export default class UpdateView extends Component {
               )
         )
     
+        changeSelect = (evnt) => {
+            let stateChange = {...this.state}
+            console.log("StateChange Start: ", stateChange)
+            stateChange.displayHolder = evnt.target.value
+            console.log("StateChange End: ", stateChange)
+            this.setState( stateChange )
+        }
+    
 
      
     render(){
-       let nameInput = 'fname';
+       //let nameInput = 'lname';
+       console.log("DisplayHolder: ", this.state.displayHolder)
         //console.log("State : ", this.state.fname[0].fname)
         return(
             <div>
@@ -69,10 +78,23 @@ export default class UpdateView extends Component {
                     className='linkbutton'>
                     Home
                 </Link>
+                <select name="" onChange={this.changeSelect}>
+                        {/* <option defaultValue>Choose Trait Type</option> */}
+                        <option value="fname">First Name</option>
+                        <option value="lname">Last Name</option>
+                        <option value="race">Race</option>
+                        <option value="allignment">Allignment</option>
+                        <option value="gender">Gender</option>
+                        <option value="classtype">Class</option>
+                        <option value="weight">Weight</option>
+                        <option value="height">Height</option>
+                        <option value="phystrait">Physical Trait</option>
+                        <option value="soctrait">Social Trait</option>
+                        <option value="level">Level</option>
+                    </select>
                 <div>
-                    {/* Some Text {this.state.fname[1]} */}
-                    {this.state[nameInput].map(trait => (
-                        <TraitDisplay trait={trait} traitName={nameInput}/>
+                    {this.state[this.state.displayHolder].map(trait => (
+                        <TraitDisplay trait={trait} traitName={this.state.displayHolder}/>
                 ))}
                 </div>
 

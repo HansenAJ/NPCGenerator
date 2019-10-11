@@ -29,7 +29,7 @@ export default class AddTrait extends Component {
         { method  : "POST"
         , headers : { "Content-Type": "application/json" }
         , body    : JSON.stringify(data)
-        })
+        }).then(document.getElementById('traitInput').value = '')
     }
 
     render(){
