@@ -1,2 +1,2 @@
 release: python3 manage.py migrate
-web: gunicorn NPCGenerator.wsgi --log-file -
+web: gunicorn project_4.wsgi --log-file -
