@@ -16,7 +16,7 @@ const traitDisplay = (field, trait) => {
 //randomize each bit of state and add to second holder
 //'onclick' re-calls randomizer on that field, updates state, forcing refresh
 
-const field = ['First Name', 'Last Name', 'Race', 'Gender', 'Alignment', "Class", 'Height', 'Weight', 'Weapon', 'Level', 'Pyshical Trait', 'Social Trait 1', 'Social Trait 2']
+const field = ['First Name', 'Last Name', 'Race', 'Gender', 'Alignment', "Class", 'Height', 'Weight', 'Weapon', 'Level', 'Pyshical Trait', 'First Social Trait', 'Second Social Trait']
 
 const toSoctrait = (key) =>
       key === "soctrait1" ? "soctrait"
