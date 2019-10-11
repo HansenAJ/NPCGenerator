@@ -93,9 +93,9 @@ export default class LandingPage extends Component {
     let start = {...this.state.start}
 
     for (let x in values) {
-        if(key == 'soctrait1'){
+        if(key === 'soctrait1'){
             start[key].push(values[x]['soctrait'])
-        }else if(key == 'soctrait2'){
+        }else if(key === 'soctrait2'){
             start[key].push(values[x]['soctrait'])
         }else{
             start[key].push(values[x][key])
@@ -139,7 +139,10 @@ export default class LandingPage extends Component {
             Add New Trait
         </Link>
         <Link to={{
-            pathname: "/updateview/"
+            pathname: "/updateview/",
+                state: {
+                  parentState: this.state.start
+                }
             }}
             className='linkbutton'>
             Update View

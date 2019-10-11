@@ -6,82 +6,94 @@ class LevelSerializer(serializers.ModelSerializer):
     class Meta:     
         model = Level
         fields = [
-            'level'
+            'level',
+            'id'
         ]
 
 class SocTraitSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = SocTrait
         fields = [
-            'soctrait'
+            'soctrait',
+            'id'
         ]
 
 class PhysTraitSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = PhysTrait
         fields = [
-            'phystrait'
+            'phystrait',
+            'id'
         ]
 
 class FNameSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = FName
         fields = [
-            'fname'
+            'fname',
+            'id'
         ]
 
 class LNameSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = LName
         fields = [
-            'lname'
+            'lname',
+            'id'
         ]
 
 class RaceSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Race
         fields = [
-            'race'
+            'race',
+            'id'
         ]
 
 class AllignmentSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Allignment
         fields = [
-            'allignment'
+            'allignment',
+            'id'
         ]
 
 class GenderSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Gender
         fields = [
-            'gender'
+            'gender',
+            'id'
         ]
 
 class ClassTypeSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = ClassType
         fields = [
-            'classtype'
+            'classtype',
+            'id'
         ]
 
 class WeightSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Weight
         fields = [
-            'weight'
+            'weight',
+            'id'
         ]
 
 class HeightSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Height
         fields = [
-            'height'
+            'height',
+            'id'
         ]
 
 class WeaponSerializer(serializers.ModelSerializer):  
     class Meta:     
         model = Weapon
         fields = [
-            'weapon'
+            'weapon',
+            'id'
         ]
