@@ -11,36 +11,32 @@ const getAllFromServer = (key) =>
 
 
 export default class UpdateView extends Component {
-    state ={
+    state = {
         displayHolder: 'fname',
-        fname: [],
-        lname: [],
-        race: [],
-        gender: [],
-        allignment: [],
-        classtype: [],
-        height: [],
-        weight: [],
-        weapon: [],
-        level: [],
-        phystrait: [],
-        soctrait: []
+        start:{
+            fname: [],
+            lname: [],
+            race: [],
+            gender: [],
+            allignment: [],
+            classtype: [],
+            height: [],
+            weight: [],
+            weapon: [],
+            level: [],
+            phystrait: [],
+            soctrait: []
+        }
     }
 
-    cacheFieldValues = (key) => (values) => {
-        let tempHolder;
-        let idHolder;
-        let stateHolder = {...this.state}
-        for(let x in values){
-            // console.log("Values: ", values)
-            // console.log("ID : ", values[x].id)
-            idHolder = values[x].id
-            tempHolder = {[key]: values[x][key], id: idHolder}
-            // console.log("Temp:", tempHolder)
-            stateHolder[key].push(tempHolder)
-        }
-        this.setState({stateHolder})
-    }
+      cacheFieldValues = (key) => (values) => {
+
+        let start = {...this.state.start}
+    
+        start[key] = values
+    
+        this.setState({start})
+      }
 
     componentDidMount(){
         //this.setState(this.props.location.state.parentState)
@@ -48,7 +44,7 @@ export default class UpdateView extends Component {
     }
     setToState = () =>
         Promise.all(
-          Object.keys(this.state)
+          Object.keys(this.state.start)
               .map(k =>
                   getAllFromServer(k) 
                       .then(this.cacheFieldValues(k))
@@ -56,11 +52,21 @@ export default class UpdateView extends Component {
         )
     
         changeSelect = (evnt) => {
-            let stateChange = {...this.state}
+            let stateChange = {...this.state.start}
             console.log("StateChange Start: ", stateChange)
             stateChange.displayHolder = evnt.target.value
             console.log("StateChange End: ", stateChange)
             this.setState( stateChange )
+        }
+
+        deleteFromServer = (trait, traitName, traitID) => {
+            fetch(`/api/${traitName}/${traitID}/`,
+                { method  : "DELETE"
+                , headers : { "Content-Type": "application/json" }
+                , body    : JSON.stringify(trait)
+            }).then(res => {
+                this.setToState()
+            })
         }
     
 
@@ -93,8 +99,8 @@ export default class UpdateView extends Component {
                         <option value="level">Level</option>
                     </select>
                 <div>
-                    {this.state[this.state.displayHolder].map(trait => (
-                        <TraitDisplay trait={trait} traitName={this.state.displayHolder}/>
+                    {this.state.start[this.state.displayHolder].map(trait => (
+                        <TraitDisplay trait={trait} deleteFromServer={this.deleteFromServer} traitName={this.state.displayHolder}/>
                 ))}
                 </div>
 

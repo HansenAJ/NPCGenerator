@@ -18,13 +18,13 @@ const traitDisplay = (field, trait) => {
 
 const field = ['First Name', 'Last Name', 'Race', 'Gender', 'Alignment', "Class", 'Height', 'Weight', 'Weapon', 'Level', 'Pyshical Trai', 'Social Trait 1', 'Social Trait 2']
 
-const getRouteNameFromKey = (key) =>
+const toSoctrait = (key) =>
       key === "soctrait1" ? "soctrait"
     : key === "soctrait2" ? "soctrait"
     : key
 
 const getRandomFieldFromServer = (key) =>
-    fetch(`/api/${getRouteNameFromKey(key)}/`)
+    fetch(`/api/${toSoctrait(key)}/`)
         .then(res => res.json())
 
 export default class LandingPage extends Component {
@@ -92,15 +92,8 @@ export default class LandingPage extends Component {
 
     let start = {...this.state.start}
 
-    for (let x in values) {
-        if(key === 'soctrait1'){
-            start[key].push(values[x]['soctrait'])
-        }else if(key === 'soctrait2'){
-            start[key].push(values[x]['soctrait'])
-        }else{
-            start[key].push(values[x][key])
-        }
-    }
+    start[key] = values.map(o => o[toSoctrait(key)]);
+
     this.setState({start})
   }
 
@@ -141,14 +134,10 @@ export default class LandingPage extends Component {
         </Link>
         <Link to={{
             pathname: "/updateview/",
-                state: {
-                  parentState: this.state.start
-                }
             }}
             className='linkbutton'>
             Update View
         </Link>
-        {/* pass props through link with react router */}
       </header>
     </div>
   );
