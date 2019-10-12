@@ -1,22 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+//import './App.css';
 
 
 const randomSelect= (trait) => trait[Math.floor(Math.random()*(trait.length))]
 
-const traitDisplay = (field, trait) => {
-  return (
-    <div>
-       {field} : {trait}
-    </div>
-  )
-}
+// const traitDisplay = (field, trait) => {
+//   return (
+//     <div>
+//        {field} : {trait}
+//     </div>
+//   )
+// }
 
-//Pull state on did mount
-//randomize each bit of state and add to second holder
-//'onclick' re-calls randomizer on that field, updates state, forcing refresh
-
-const field = ['First Name', 'Last Name', 'Race', 'Gender', 'Alignment', "Class", 'Height', 'Weight', 'Weapon', 'Level', 'Pyshical Trait', 'First Social Trait', 'Second Social Trait']
+//const field = ['First Name', 'Last Name', 'Race', 'Gender', 'Alignment', "Class", 'Height', 'Weight', 'Weapon', 'Level', 'Pyshical Trait', 'First Social Trait', 'Second Social Trait']
 
 const toSoctrait = (key) =>
       key === "soctrait1" ? "soctrait"
@@ -65,16 +62,6 @@ export default class LandingPage extends Component {
   componentDidMount = () => {
 
     this.setAllRandomFields();
-    // let randomState = {...this.state.randomized}
-
-    // for (let property1 in this.state.start) {
-    //   //console.log("ObjectStatePropery = " + this.state.start[property1][0])
-    // //   randomState[objState[property1][0]] = tempObj
-    //     randomState[property1] = randomSelect(this.state.start[property1])
-    //     console.log("rand: ", randomState)
-    // }
-
-    // this.setState({ randomized: randomState })
 
   }
 
@@ -110,35 +97,35 @@ export default class LandingPage extends Component {
 
   render = () =>(
     <div className="App">
-      <header className="App-header">
-        <button onClick={() => this.setAllRandomFields()}>Make Me a New NPC</button>
-        {traitDisplay(field[0], this.state.randomized.fname)}
-        {traitDisplay(field[1], this.state.randomized.lname)}
-        {traitDisplay(field[2], this.state.randomized.race)}
-        {traitDisplay(field[3], this.state.randomized.gender)}
-        {traitDisplay(field[4], this.state.randomized.allignment)}
-        {traitDisplay(field[5], this.state.randomized.classtype)}
-        {traitDisplay(field[6], this.state.randomized.height)}
-        {traitDisplay(field[7], this.state.randomized.weight)}
-        {traitDisplay(field[8], this.state.randomized.weapon)}
-        {traitDisplay(field[9], this.state.randomized.level)}
-        {traitDisplay(field[10], this.state.randomized.phystrait)}
-        {traitDisplay(field[11], this.state.randomized.soctrait1)}
-        {traitDisplay(field[12], this.state.randomized.soctrait2)}
+        <div className="mainTraitBox">
+        <button className ="linkButton" onClick={() => this.setAllRandomFields()}>Make Me a New NPC</button>
+          <article className="mainDisplay">
+            Your NPC
+            <br></br>
+            <font className="traitText">{this.state.randomized.fname}</font> <font className="traitText">{this.state.randomized.lname}</font> is a level <font className="traitText">{this.state.randomized.level}</font> <font className="traitText">{this.state.randomized.race}</font> <font className="traitText">{this.state.randomized.classtype}</font> who uses a <font className="traitText">{this.state.randomized.weapon}</font>.
+            <br></br>
+            <font className="traitText">{this.state.randomized.fname}</font> is <font className="traitText">{this.state.randomized.gender}</font>, and are of <font className="traitText">{this.state.randomized.allignment}</font> allignment.
+            <br></br>
+            <font className="traitText">{this.state.randomized.fname}</font> is <font className="traitText">{this.state.randomized.height}</font> and <font className="traitText">{this.state.randomized.weight}</font> for a <font className="traitText">{this.state.randomized.race}</font>.
+            <br></br>
+            They are known to be <font className="traitText">{this.state.randomized.soctrait1}</font>, and it is a well kept secret that they are <font className="traitText">{this.state.randomized.soctrait2}</font>.
+            <br></br>
+            The thing a person would notice first about them : <font className="traitText">{this.state.randomized.phystrait}</font>.
+          </article>
+        </div>
         
         <Link to={{
             pathname: "/addtrait/"
             }}
-            className='linkbutton'>
+            className='linkButton'>
             Add New Trait
         </Link>
         <Link to={{
             pathname: "/updateview/",
             }}
-            className='linkbutton'>
+            className='linkButton'>
             Update View
         </Link>
-      </header>
     </div>
   );
 }

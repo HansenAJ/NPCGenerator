@@ -77,14 +77,14 @@ export default class UpdateView extends Component {
         //console.log("State : ", this.state.fname[0].fname)
         return(
             <div>
-                Here Is The Update View
                 <Link to={{
                     pathname: "/"
                     }}
-                    className='linkbutton'>
+                    className='linkButton'>
                     Home
                 </Link>
-                <select name="" onChange={this.changeSelect}>
+                <br></br>
+                <select className="selectorDropdown" name="" onChange={this.changeSelect}>
                         {/* <option defaultValue>Choose Trait Type</option> */}
                         <option value="fname">First Name</option>
                         <option value="lname">Last Name</option>

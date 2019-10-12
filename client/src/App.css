@@ -17,6 +17,70 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+body{
+  background-color: gray;
 }
+
+header{
+  font-size: 50px;
+}
+
+footer{
+  font-size: 20px;
+}
+
+
+.mainApp{
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainDisplay{
+  font-size: 20px;
+  color: beige;
+  margin: 10px;
+}
+
+.traitText{
+  color: blue;
+}
+
+.selectorDropdown{
+  margin: 10px;
+}
+
+.linkButton {
+  border-top: 1px solid #96d1f8;
+  background: #9dcae8;
+  /* background: -webkit-gradient(linear, left top, left bottom, from(#005791), to(#9dcae8)); */
+  background: -webkit-linear-gradient(top, #005791, #9dcae8);
+  background: -moz-linear-gradient(top, #005791, #9dcae8);
+  background: -ms-linear-gradient(top, #005791, #9dcae8);
+  background: -o-linear-gradient(top, #005791, #9dcae8);
+  padding: 5px 10px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #000000;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  vertical-align: middle;
+  margin: 5px;
+  }
+.linkButton:hover {
+  border-top-color: #512878;
+  background: #512878;
+  color: #ccc;
+  }
+.linkButton:active {
+  border-top-color: #1b435e;
+  background: #1b435e;
+  }

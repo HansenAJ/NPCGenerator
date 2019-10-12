@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom'
 export default class AddTrait extends Component {
 
     state = {
-        newTrait: {}
+        newTrait: {},
+        selectTrait: 'fname'
     }
     
 
@@ -22,10 +23,12 @@ export default class AddTrait extends Component {
 
     changeSelect = (evnt) => {
         document.getElementById('traitInput').setAttribute('name', evnt.target.value)
+        this.setState( {selectTrait: evnt.target.value} )
     }
   addTrait= (data) => {
     //let dummyinput = {fname: 'dummyinput'}
-    fetch(`/api/fname/`, 
+    console.log("SelectTrait: ", this.state.selectTrait)
+    fetch(`/api/${this.state.selectTrait}/`, 
         { method  : "POST"
         , headers : { "Content-Type": "application/json" }
         , body    : JSON.stringify(data)
@@ -35,6 +38,12 @@ export default class AddTrait extends Component {
     render(){
         return(
             <div>
+                <Link to={{
+                    pathname: "/"
+                    }}
+                    className='linkButton'>
+                    Home
+                </Link>
                 <h2>Add New Item</h2>
                 <form method = "POST" onSubmit={this.handleSubmit}>
                     <select name="" onChange={this.changeSelect}>
@@ -51,16 +60,10 @@ export default class AddTrait extends Component {
                         <option value="soctrait">Social Trait</option>
                         <option value="level">Level</option>
                     </select>
-                    <label>Input Trait</label>
+                    <label> Input Trait </label>
                     <input type="text" name="fname" placeholder="New Trait Here" onChange={this.inputHandler} id='traitInput'/>
                     <input type="submit" value="Add New Trait" className='button'/>
                 </form>
-                <Link to={{
-                    pathname: "/"
-                    }}
-                    className='linkbutton'>
-                    Home
-                </Link>
             </div>            
         )
     }

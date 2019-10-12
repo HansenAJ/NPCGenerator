@@ -13,9 +13,8 @@ export default class TraitDisplay extends Component {
         let traitName = this.props.traitName
         return(
             <div>
-                Some text Goes Here : {this.props.trait[traitName]} ID : {this.props.trait.id}
-                <br></br>
-                <button onClick={() => this.props.deleteFromServer(this.props.trait, this.props.traitName, this.props.trait.id)}>Delete Trait</button>
+                Trait : {this.props.trait[traitName]}
+                <button className='linkButton' onClick={() => this.props.deleteFromServer(this.props.trait, this.props.traitName, this.props.trait.id)}>Delete Trait</button>
             </div>
             )
     }
