@@ -37,14 +37,14 @@ export default class AddTrait extends Component {
 
     render(){
         return(
-            <div>
+            <div className='addTrait'>
                 <Link to={{
                     pathname: "/"
                     }}
                     className='linkButton'>
                     Home
                 </Link>
-                <h2>Add New Item</h2>
+                <h2 className="traitText">Add New Item</h2>
                 <form method = "POST" onSubmit={this.handleSubmit}>
                     <select name="" onChange={this.changeSelect}>
                         {/* <option defaultValue>Choose Trait Type</option> */}
@@ -60,9 +60,9 @@ export default class AddTrait extends Component {
                         <option value="soctrait">Social Trait</option>
                         <option value="level">Level</option>
                     </select>
-                    <label> Input Trait </label>
+                    <label className="traitText"> Input Trait </label>
                     <input type="text" name="fname" placeholder="New Trait Here" onChange={this.inputHandler} id='traitInput'/>
-                    <input type="submit" value="Add New Trait" className='button'/>
+                    <input type="submit" value="Add New Trait" className='linkButton'/>
                 </form>
             </div>            
         )

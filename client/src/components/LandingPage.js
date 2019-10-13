@@ -106,7 +106,7 @@ export default class LandingPage extends Component {
             <br></br>
             <font className="traitText">{this.state.randomized.fname}</font> is <font className="traitText">{this.state.randomized.gender}</font>, and are of <font className="traitText">{this.state.randomized.allignment}</font> allignment.
             <br></br>
-            <font className="traitText">{this.state.randomized.fname}</font> is <font className="traitText">{this.state.randomized.height}</font> and <font className="traitText">{this.state.randomized.weight}</font> for a <font className="traitText">{this.state.randomized.race}</font>.
+            <font className="traitText">{this.state.randomized.fname}</font> is <font className="traitText">{this.state.randomized.height}</font> height and <font className="traitText">{this.state.randomized.weight}</font> weight for a <font className="traitText">{this.state.randomized.race}</font>.
             <br></br>
             They are known to be <font className="traitText">{this.state.randomized.soctrait1}</font>, and it is a well kept secret that they are <font className="traitText">{this.state.randomized.soctrait2}</font>.
             <br></br>
@@ -124,7 +124,7 @@ export default class LandingPage extends Component {
             pathname: "/updateview/",
             }}
             className='linkButton'>
-            Update View
+            Trait List
         </Link>
     </div>
   );
