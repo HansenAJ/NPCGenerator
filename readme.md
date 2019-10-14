@@ -24,10 +24,10 @@ MERN + React Router, Python, Django - Then deployed to Heroku, link below.
    [Project Board](https://github.com/HansenAJ/NPCGenerator/projects/1)
    
 ## WireFrame :
-![Wireframe](https://github.com/HansenAJ/NPCGenerator/blob/master/NPCGen_Wireframe.jpeg)
+![Wireframe](https://github.com/HansenAJ/NPCGenerator/blob/master/NPCGen_Wireframe.JPG)
 
 ## ERD/Component Tree :
-![ERD](https://github.com/HansenAJ/NPCGenerator/blob/master/NPCGen_ERD.jpeg)
+![ERD](https://github.com/HansenAJ/NPCGenerator/blob/master/NPCGen_ERD.JPG)
 
    
   
